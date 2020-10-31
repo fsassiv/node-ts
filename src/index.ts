@@ -8,5 +8,5 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on PORT ${PORT}`);
+  console.log(`Server is running on PORT ${PORT}.`, 'API http://localhost:3000');
 });
