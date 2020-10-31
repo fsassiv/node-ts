@@ -1,12 +1,17 @@
 import express, { Application, Request, Response } from 'express';
+import helmet from 'helmet';
+import morgan from 'morgan';
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app: Application = express();
 
+app.use(helmet());
+app.use(morgan('tiny'));
+
 app.get('/', (_req: Request, res: Response) => {
-  res.send('Hello World!');
+  res.send('Hello World!').status(200);
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on PORT ${PORT}.`, 'API http://localhost:3000');
+  console.log(`Server is running on PORT ${PORT}. API http://localhost:3000`);
 });
