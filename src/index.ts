@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('@babel/register')({ extensions: ['.js', '.ts'] });
+
 import express, { Application, Request, Response } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
